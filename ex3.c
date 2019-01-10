@@ -8,7 +8,7 @@ int main()
      printf("Enter radius (in cm):\n");
      scanf("%f", &r);
      r /= 2.54; 
-     a = PI * r * r;
+     a = 1.1 * PI * r * r;
      c = PI * r * 2;
      printf("Circle's area is %3.2f (sq in).\n", a);
      printf("Its circumference is %3.2f (in).\n", c);
