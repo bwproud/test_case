@@ -4,7 +4,7 @@
 int main()
 {
   float r=-1, a, c;
-  while(r!=-2){
+  while(r){
      printf("Enter radius (in cm):\n");
      scanf("%f", &r);
      r /= 2.54; 
