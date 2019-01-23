@@ -3,12 +3,12 @@
 
 int main()
 {
-  float a, sum=0, min, max, product=1;
+  double a, sum=0, min, max, product=1;
   int d;
 
-  printf("Enter five floating-point numbers:\n");
-  for(d=0; d<5; d++){
-    scanf("%f", &a);
+  printf("Enter 10 floating-point numbers:\n");
+  for(d=0; d<10; d++){
+    scanf("%lf", &a);
     if(!d){
       max=min=a;
     }
@@ -22,8 +22,8 @@ int main()
     }
   }
  
-  printf("Sum is %.4f\n", sum);
-  printf("Min is %.4f\n", min);
-  printf("Max is %.4f\n", max);
-  printf("Product is %.4f\n", product);
+  printf("Sum is %.5lf\n", sum);
+  printf("Min is %.5lf\n", min);
+  printf("Max is %.5lf\n", max);
+  printf("Product is %.5lf\n", product);
 }
