@@ -9,6 +9,7 @@ int main()
   scanf("%d", &n);
   if(n > 20 || n < 1){
     printf("Number is not in the range from 1 to 20\n");
+    return;
   }
   printf("Here are the first %d ordinal numbers:\n", n);
   for(i=1; i<=n; i++){
