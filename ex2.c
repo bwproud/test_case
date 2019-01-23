@@ -3,13 +3,27 @@
 
 int main()
 {
-  float r, a, c;
+  float a, sum=0, min, max, product=1;
+  int d;
 
-  printf("Enter radius (in cm):\n");
-  scanf("%f", &r);
-  r /= 2.54; 
-  a = PI * r * r;
-  c = 2 * PI * r;
-  printf("Circle's area is %3.2f (sq in).\n", a);
-  printf("Its circumference is %3.2f (in).\n", c);
+  printf("Enter five floating-point numbers:\n");
+  for(d=0; d<5; d++){
+    scanf("%f", &a);
+    if(!d){
+      max=min=a;
+    }
+    sum+=a;
+    product*=a;
+    if(a < min){
+      min = a;
+    }
+    if(a > max){
+      max = a;
+    }
+  }
+ 
+  printf("Sum is %.4f\n", sum);
+  printf("Min is %.4f\n", min);
+  printf("Max is %.4f\n", max);
+  printf("Product is %.4f\n", product);
 }

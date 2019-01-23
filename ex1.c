@@ -3,12 +3,12 @@
 
 int main()
 {
-  float r, a;
-
-  printf("Enter radius (in cm):\n");
-  scanf("%f", &r);
-
-  a = (PI * r * r)/6.4516;
-
-  printf("Circle's area is %3.2f (sq in).\n", a);
+  int i, n;
+  
+  printf("Please enter a number from 1 to 5:\n");
+  scanf("%d", &n);
+  
+  for(i=1; i<=n; i++){
+    printf("%d Hello World\n", i);
+  }
 }
