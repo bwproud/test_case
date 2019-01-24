@@ -5,9 +5,9 @@
 int main()
 {
   int d=-1, t;
+  printf("Number ?\n");
+  scanf("%d", &d);
   while(d){
-    printf("Number ?\n");
-    scanf("%d", &d);
     t = sqrt(d*2);
     t = (t * (t+1))/2;
     if(d == t){
@@ -15,6 +15,8 @@ int main()
     } else {
       printf("%d is not triangular, nearest triangular number below %d is %d\n", d, d, t);  
     }
+    printf("Number ?\n");
+    scanf("%d", &d);
   }
   printf("Done\n");
 }
