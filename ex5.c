@@ -8,7 +8,7 @@ int main()
   printf("Number ?\n");
   scanf("%d", &d);
   while(d){
-    t = sqrt(d*2);
+    t = (sqrt(d*8+1)-1)/2;
     t = (t * (t+1))/2;
     if(d == t){
       printf("%d is a triangular number\n", t);
