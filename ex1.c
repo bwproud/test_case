@@ -1,26 +1,47 @@
+/* Example: analysis of text */
+
 #include <stdio.h>
-#define PI 3.14159
+#include <string.h>
+
+#define MAX 1000 /* The maximum number of characters in a line of input */
 
 int main()
 {
-  int i, n;
+  char text[MAX], c;
+  int i;
+  int lowercase, uppercase, digits, other;
+  int length;
   
-  printf("Enter a number from 1 to 20:\n");
-  scanf("%d", &n);
-  if(n > 20 || n < 1){
-    printf("Number is not in the range from 1 to 20\n");
-    return;
-  }
-  printf("Here are the first %d ordinal numbers:\n", n);
-  for(i=1; i<=n; i++){
-    if(i == 1){
-      printf("%dst\n", i);
-    } else if (i == 2){
-      printf("%dnd\n", i);
-    } else if (i == 3){
-      printf("%drd\n", i);
-    } else {
-      printf("%dth\n", i);
+  puts("Type some text (then ENTER):");
+  
+  /* Save typed characters in text[]: */
+    
+  fgets(text, MAX, stdin);
+  length = strlen(text)-1;
+  
+  /* Analyse contents of text[]: */
+    
+  for (i = lowercase = uppercase = digits = other = 0; i < MAX; i++)
+  {
+    c = text[i];
+    if (c >= 'a' && c <= 'z')
+      lowercase++;
+    else if (c >= 'A' && c <= 'Z')
+      uppercase++;
+    else if (c >= '0' && c <= '9')
+      digits++;
+    else
+    {
+      if (c == '\n')
+        break;
+      other++;
     }
   }
+  
+  puts("\nYou typed:");
+  printf("A string with %d characters\n", length);
+  printf("\t%d lower case letters\n", lowercase);
+  printf("\t%d upper case letters\n", uppercase);
+  printf("\t%d digits\n", digits);
+  printf("\t%d others\n", other);
 }
