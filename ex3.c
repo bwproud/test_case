@@ -29,7 +29,6 @@ int main()
   }
 
   for (i = 0, end = length-1; i < length/2; i++, end--) {
-    printf("comparing %c with %c\n", text[i], text[end]);
     if(!isalpha(text[i])){
       end++;
       continue;
