@@ -1,0 +1,17 @@
+ex7.c:6:10: error: expected ';' at end of declaration
+int *p=&x 
+         ^
+         ;
+ex7.c:10:30: warning: format specifies type 'unsigned int' but the argument has type 'int *' [-Wformat]
+        printf("\n&x = %u\n",&x);
+                       ~~    ^~
+ex7.c:11:30: warning: format specifies type 'unsigned int' but the argument has type 'int *' [-Wformat]
+        printf("\n&y = %u\n",&y);
+                       ~~    ^~
+ex7.c:12:30: warning: format specifies type 'unsigned int' but the argument has type 'int *' [-Wformat]
+        printf("\n&z = %u\n",&z);
+                       ~~    ^~
+ex7.c:13:32: warning: format specifies type 'unsigned int' but the argument has type 'int **' [-Wformat]
+        printf("\n&p = %u\n\n",&p);
+                       ~~      ^~
+4 warnings and 1 error generated.
