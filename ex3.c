@@ -23,7 +23,7 @@ int main()
   for (int j=0; j < length; j++) {
     reverse[j] = text[length - j - 1];
   }
-  
+  reverse[length] = '\0';
   puts("Your input in reverse is:");
   printf("%s\n", reverse);
 
