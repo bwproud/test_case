@@ -9,8 +9,7 @@
 int main()
 {
   char text[MAX], c;
-  int i, end;
-  int p=1;
+  char reverse[MAX];
   int length;
   
   puts("Type some text (then ENTER):");
@@ -18,33 +17,38 @@ int main()
   /* Save typed characters in text[]: */
     
   fgets(text, MAX, stdin);
-  length = strlen(text)-1;
+
+  length = strlen(text) - 1;
   
-  /* Analyse contents of text[]: */
+  for (int j=0; j < length; j++) {
+    reverse[j] = text[length - j - 1];
+  }
   
-  for (i = 0, end = length-1; i < length/2; i++, end--) {
-    c = text[i];
-    text[i] =  text[end];
-    text[end] = c;
+  puts("Your input in reverse is:");
+  printf("%s\n", reverse);
+
+  char rev[MAX], tex[MAX];
+
+  int count = 0;
+
+  for (int j = 0; j < length; j++) {
+    if (ispunct(text[j]) || isspace(text[j]) || isblank(text[j])) {
+      continue;
+    } else if (isalpha(text[j])) {
+      tex[count] = tolower( text[j]);
+      count++;
+    }
   }
 
-  for (i = 0, end = length-1; i < length/2; i++, end--) {
-    if(!isalpha(text[i])){
-      end++;
-      continue;
-    }
-    if(!isalpha(text[end])){
-      i--;
-      continue;
-    }
-    if(toupper(text[i]) != toupper(text[end])){
-      p = 0;
-    }
+  tex[count] = '\0';
+
+  for (int j=0; j<strlen(tex); j++) {
+    rev[j] = tex[strlen(tex) - j - 1];
   }
   
+  rev[count] = '\0';
   
-  printf("Your input in reverse is:\n%s", text);
-  if (p) {
-    printf("Found a palindrome!\n");
+  if (strcmp(tex, rev) == 0) {
+    puts("Found a palindrome!");
   }
 }
